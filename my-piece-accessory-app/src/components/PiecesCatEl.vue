@@ -1,10 +1,10 @@
 <template>
-	<div>
+	<div div class="categ">
 		<b-row>
 			<b-col class="colm" md="4">
 				<label>
 					<b-col>
-						<b-dropdown class="dropcat1" text="ENTRAINEMENT/TRANSMISSION" variant="#" block menu-class="w-100">
+						<b-dropdown class="dropcat1" text="Entrainement / Transition" variant="#" block menu-class="w-100">
 							<b-dropdown-item class="dropitem" href="#"><img src="../../../../PiecesImages/resize/entr_trans.jpeg" alt=""></b-dropdown-item>
 						</b-dropdown>
 					</b-col>
@@ -19,7 +19,7 @@
 			<b-col class="colm" md="4">
 				<label>
 					<b-col>
-						<b-dropdown class="dropcat1" text="FREINS" variant="#" block menu-class="w-100">
+						<b-dropdown class="dropcat1" text="Freins" variant="#" block menu-class="w-100">
 							<b-dropdown-item class="dropitem" href="#"><img src="../../../../PiecesImages/resize/freins.jpeg" alt=""></b-dropdown-item>
 						</b-dropdown>
 					</b-col>
@@ -36,7 +36,7 @@
 			<b-col class="colm" md="4">
 				<label>
 					<b-col>
-						<b-dropdown class="dropcat1" text="AMÉNAGEMENTS INTERIEURS" variant="#" block menu-class="w-100">
+						<b-dropdown class="dropcat1" text="Aménagement intérieur" variant="#" block menu-class="w-100">
 							<b-dropdown-item class="dropitem" href="#"><img src="../../../../PiecesImages/resize/entre_inte.jpg" alt=""></b-dropdown-item>
 						</b-dropdown>
 					</b-col>
@@ -50,7 +50,7 @@
 			<b-col class="colm" md="4">
 				<label>
 					<b-col>
-						<b-dropdown class="dropcat1" text="MOTEURS/PIECES DE MOTEURS" variant="#" block menu-class="w-100">
+						<b-dropdown class="dropcat1" text="Moteurs / Pièces moteurs" variant="#" block menu-class="w-100">
 							<b-dropdown-item class="dropitem" href="#"><img src="../../../../PiecesImages/resize/moteurs.jpeg" alt=""></b-dropdown-item>
 						</b-dropdown>
 					</b-col>
@@ -68,7 +68,7 @@
 			<b-col class="colm" md="4">
 				<label>
 					<b-col>
-						<b-dropdown class="dropcat1" text="ESSUIE-GLACES/LAVE-GLACES" variant="#" block menu-class="w-100">
+						<b-dropdown class="dropcat1" text="Essuie-glaces / Lave-glaces" variant="#" block menu-class="w-100">
 							<b-dropdown-item class="dropitem" href="#"><img src="../../../../PiecesImages/resize/essuie-glace.jpeg" alt=""></b-dropdown-item>
 						</b-dropdown>
 					</b-col>
@@ -79,7 +79,7 @@
 			<b-col class="colm" md="4">
 				<label>
 					<b-col>
-						<b-dropdown class="dropcat1" text="CAPTEURS" variant="#" block menu-class="w-100">
+						<b-dropdown class="dropcat1" text="Capteurs" variant="#" block menu-class="w-100">
 							<b-dropdown-item class="dropitem" href="#"><img src="../../../../PiecesImages/resize/capteurs.jpeg" alt=""></b-dropdown-item>
 						</b-dropdown>
 					</b-col>
@@ -94,7 +94,7 @@
 			<b-col class="colm" md="4">
 				<label>
 					<b-col>
-						<b-dropdown class="dropcat1" text="ALLUMAGE" variant="#" block menu-class="w-100">
+						<b-dropdown class="dropcat1" text="Allumage" variant="#" block menu-class="w-100">
 							<b-dropdown-item class="dropitem" href="#"><img src="../../../../PiecesImages/resize/allumage.jpeg" alt=""></b-dropdown-item>
 						</b-dropdown>
 					</b-col>
@@ -107,7 +107,7 @@
 			<b-col class="colm" md="4">
 				<label>
 					<b-col>
-						<b-dropdown class="dropcat1" text="SYSTEME D'ECHAPPEMENT" variant="#" block menu-class="w-100">
+						<b-dropdown class="dropcat1" text="Systémé d'échappement" variant="#" block menu-class="w-100">
 							<b-dropdown-item class="dropitem" href="#"><img src="../../../../PiecesImages/resize/syst_echap.png" alt=""></b-dropdown-item>
 						</b-dropdown>
 					</b-col>
@@ -120,7 +120,7 @@
 			<b-col class="colm" md="4">
 				<label>
 					<b-col>
-						<b-dropdown class="dropcat1" text="DIRECTION ET SUSPENSION" variant="#" block menu-class="w-100">
+						<b-dropdown class="dropcat1" text="Direction et suspension" variant="#" block menu-class="w-100">
 							<b-dropdown-item class="dropitem" href="#"><img src="../../../../PiecesImages/resize/direction_suspension.jpeg" alt=""></b-dropdown-item>
 						</b-dropdown>
 					</b-col>
@@ -140,7 +140,7 @@
 			<b-col class="colm" md="4">
 				<label>
 					<b-col>
-						<b-dropdown class="dropcat1" text="BATTERIES" variant="#" block menu-class="w-100">
+						<b-dropdown class="dropcat1" text="Batteries" variant="#" block menu-class="w-100">
 							<b-dropdown-item class="dropitem" href="#"><img src="../../../../PiecesImages/resize/batteries.jpeg" alt=""></b-dropdown-item>
 						</b-dropdown>
 					</b-col>
@@ -150,7 +150,7 @@
 			<b-col class="colm" md="4">
 				<label>
 					<b-col>
-						<b-dropdown class="dropcat1" text="PHARES ET INCUBATEURS" variant="#" block menu-class="w-100">
+						<b-dropdown class="dropcat1" text="Phares et incubateurs" variant="#" block menu-class="w-100">
 							<b-dropdown-item class="dropitem" href="#"><img src="../../../../PiecesImages/resize/phares_incubateurs.jpg" alt=""></b-dropdown-item>
 						</b-dropdown>
 					</b-col>
@@ -167,7 +167,7 @@
 			<b-col class="colm" md="4">
 				<label>
 					<b-col>
-						<b-dropdown class="dropcat1" text="PERSONNALISATION" variant="#" block menu-class="w-100">
+						<b-dropdown class="dropcat1" text="Personnalisation" variant="#" block menu-class="w-100">
 							<b-dropdown-item class="dropitem" href="#"><img src="../../../../PiecesImages/resize/person.jpeg" alt=""></b-dropdown-item>
 						</b-dropdown>
 					</b-col>
@@ -192,13 +192,12 @@ export default {
 
 <style lang="scss" scoped>
 	label{
-		background: #F18E33;
-		border: 2px solid #9D1989;
-		width: 300px;
+		border: 2px solid #F18E33;
+		width: 270px;
 		padding: 2px;
 		margin-top: 5px;
 		font-size: 15px;
-
+		border-radius: 10px;
 	}
 	label~div{
 		width: 260px;
@@ -207,9 +206,9 @@ export default {
 		padding: 3px;
 	}
 	hr{
-		border: 1px solid #9D1989;
+		border: 1px solid #F18E33;
 	}
-	.images{
-		text-align: center;
+	.categ {
+		color: #9D1989;
 	}
 </style>
