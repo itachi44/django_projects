@@ -25,7 +25,7 @@ class MarqueVoiture(models.Model):
         # non exhaustif
     ]
 
-    marques = models.CharField(max_length=25, choices=MARQUES)
+    marques = models.CharField(max_length=50, choices=MARQUES)
 
     def __str__(self):
         return self.marques
@@ -35,22 +35,137 @@ def current_year():
     return datetime.date.today().year
 
 
-class Annee(models.Model):
-    annee = models.PositiveIntegerField(default=current_year(), validators=[MinValueValidator(1980), MaxValueValidator(current_year())])
-
-
 class ModeleVoiture(models.Model):
-    MODELES = []
+    RENAULT_ARKANA = 'REANAULT ARKANA'
+    RENAULT_CLIO = 'RENAULT CLIO'
+    RENAULT_ESPACE = 'RENAULT ESPACE'
+    RENAULT_KADJAR = 'RENAULT KADJAR'
+    RENAULT_KOLEOS = 'RENAULT KOLEOS'
+    FORD_ECOSPORT = 'FORD ECOSPORT'
+    FORD_EXPLORER = 'FORD EXPLORER'
+    FORD_F150 = 'FORD_F150'
+    FORD_FIESTA = 'FORD FIESTA'
+    FORD_EXPOSITION = 'FORD EXPOSITION'
+    FORD_FOCUS = 'FORD FOCUS'
+    FORD_GALAXY = 'FORD GALAXY'
+    BMW_SERIE1 = 'BMW SERIE 1'
+    BMW_M135IXDRIVE = 'BMW M135i XDrive'
+    BMW_X1 = 'BMW X1'
+    BMW_X2 = 'BMW X2'
+    BMW_X2_M35I = 'BMW X2 M35i'
+    BMW_I3 = 'BMW i3'
+    BMW_X6 = 'BMW X6'
+
+    MODELES = [
+        (RENAULT_ARKANA, 'REANAULT ARKANA'),
+        (RENAULT_CLIO, 'RENAULT CLIO'),
+        (RENAULT_ESPACE, 'RENAULT ESPACE'),
+        (RENAULT_KADJAR, 'RENAULT KADJAR'),
+        (RENAULT_KOLEOS, 'RENAULT KOLEOS'),
+        (FORD_ECOSPORT, 'FORD ECOSPORT'),
+        (FORD_EXPLORER, 'FORD EXPLORER'),
+        (FORD_F150, 'FORD_F150'),
+        (FORD_FIESTA, 'FORD FIESTA'),
+        (FORD_EXPOSITION, 'FORD EXPOSITION'),
+        (FORD_FOCUS, 'FORD FOCUS'),
+        (FORD_GALAXY, 'FORD GALAXY'),
+        (BMW_SERIE1, 'BMW SERIE 1'),
+        (BMW_M135IXDRIVE, 'BMW M135i XDrive'),
+        (BMW_X1, 'BMW X1'),
+        (BMW_X2, 'BMW X2'),
+        (BMW_X2_M35I, 'BMW X2 M35i'),
+        (BMW_I3, 'BMW i3'),
+        (BMW_X6, 'BMW X6'),
+    ]
+
     modele_label = models.CharField(max_length=25, choices=MODELES)
-    annee = models.ForeignKey(Annee, related_name='modele', default=2021, on_delete=models.DO_NOTHING)
-    marque = models.ForeignKey(MarqueVoiture, related_name='marque', default=datetime.date.today().year, on_delete=models.RESTRICT)
+    annee = models.PositiveIntegerField(default=current_year(),
+                                        validators=[MinValueValidator(1980), MaxValueValidator(current_year())])
+    marque = models.ForeignKey(MarqueVoiture, related_name='marque',
+                               on_delete=models.RESTRICT)
 
     def __str__(self):
         return self.modele_label
 
 
+class Motorisation(models.Model):
+    DIESEL = 'DIESEL'
+    GPL = 'GPL'
+    HYBRIDE = 'HYBRIDE'
+    ESSENCE = 'ESSENCE'
+    E85 = 'E85'
+
+    MOTORISATION = [
+        (DIESEL, 'DIESEL'),
+        (GPL, 'GPL'),
+        (HYBRIDE, 'HYBRIDE'),
+        (ESSENCE, 'ESSENCE'),
+        (E85, 'E85'),
+    ]
+
+    motorisation = models.CharField(max_length=100, choices=MOTORISATION)
+    modele_label = models.ForeignKey(ModeleVoiture, related_name='modele', on_delete=models.CASCADE)
+
+
 class CategoriePiece(models.Model):
-    categorie_name = models.CharField(max_length=100)
+    # Pièces détachées
+    ENT_ET_TRANS = 'ENTRAINEMENT ET TRANSMISSION'
+    FREINS = 'FREINS'
+    AME_INT = 'AMENAGEMENTS INTERIEURS'
+    MOTEURS = 'MOTEURS ET PIECES DE MOTEUR'
+    ES_LA_GLACE = 'Essuie-glaces / Lave-glaces'
+    FILTRES = 'FILTRES'
+    CAPTEURS = 'CAPTEURS'
+    ALLUMAGE = 'ALLUMAGE'
+    ECHA_SYST = 'ECHAPPEMENT ET SYSTEME D\'ECHAPPEMENT'
+    DIRECT_SUSPEN = 'DIRECTION ET SUSPENSION'
+    BATTERIES = 'BATTERIES'
+
+    # Accessoires
+    PORT_BAG = 'PORTE-BAGAGES ARRIÈRE'
+    GAL_TOIT_COFFRES = 'CALERIES DE TOIT ET COFFRES'
+    PNEUS_JANTES = 'PNEUS ET JANTES'
+    ATT_REMORQUE = 'ATTELAGES POUR REMORQUE'
+    ACCESS_PNEUS = 'ACCESSOIRES PNEUS ET JANTES'
+    OUTILS = 'OUTILS'
+    ENTRE_PNEUS = 'ENTRETIEN DES PNEUS'
+    ENTRE_JANTES = 'ENTRETIEN DES JANTES'
+    ENTRE_INTER = 'ENTRETIEN INTERIEUR'
+    ENTRE_MOTEUR = 'ENTRETIEN MOTEUR'
+    VOLANTS = 'VOLANTS ET MOYEUX DE VOLANTS'
+    ASSIST_PANNE = 'ASSISTANCE PANNE'
+    EPON_CHIF_BROS = 'EPONGES, CHIFFON, BROSSES'
+
+    CATEGORIES = [
+        (ENT_ET_TRANS, 'ENTRAINEMENT ET TRANSMISSION'),
+        (ENT_ET_TRANS, 'ENTRAINEMENT ET TRANSMISSION'),
+        (FREINS, 'FREINS'),
+        (AME_INT, 'AMENAGEMENTS INTERIEURS'),
+        (MOTEURS, 'MOTEURS ET PIECES DE MOTEUR'),
+        (ES_LA_GLACE, 'Essuie-glaces / Lave-glaces'),
+        (FILTRES, 'FILTRES'),
+        (CAPTEURS, 'CAPTEURS'),
+        (ALLUMAGE, 'ALLUMAGE'),
+        (ECHA_SYST, 'ECHAPPEMENT ET SYSTEME D\'ECHAPPEMENT'),
+        (DIRECT_SUSPEN, 'DIRECTION ET SUSPENSION'),
+        (BATTERIES, 'BATTERIES'),
+        (PORT_BAG, 'PORTE-BAGAGES ARRIÈRE'),
+        (GAL_TOIT_COFFRES, 'CALERIES DE TOIT ET COFFRES'),
+        (ATT_REMORQUE, 'ATTELAGES POUR REMORQUE'),
+        (PNEUS_JANTES, 'PNEUS ET JANTES'),
+        (ATT_REMORQUE, 'ATTELAGES POUR REMORQUE'),
+        (ACCESS_PNEUS, 'ACCESSOIRES PNEUS ET JANTES'),
+        (OUTILS, 'OUTILS'),
+        (ENTRE_PNEUS, 'ENTRETIEN DES PNEUS'),
+        (ENTRE_JANTES, 'ENTRETIEN DES JANTES'),
+        (ENTRE_INTER, 'ENTRETIEN INTERIEUR'),
+        (ENTRE_MOTEUR, 'ENTRETIEN MOTEUR'),
+        (VOLANTS, 'VOLANTS ET MOYEUX DE VOLANTS'),
+        (ASSIST_PANNE, 'ASSISTANCE PANNE'),
+        (EPON_CHIF_BROS, 'EPONGES, CHIFFON, BROSSES')
+    ]
+
+    categorie_name = models.CharField(max_length=200, choices=CATEGORIES)
     # ManyToMany (table ad hoc)
 
     categorie_modele = models.ManyToManyField(ModeleVoiture, default=None, related_name='categoriePiece', blank=True)
@@ -85,11 +200,11 @@ class Client(models.Model):
         return all_name
 
 
-
 class Commande(models.Model):
     date_commande = models.DateTimeField(auto_now_add=True)
     montant_total = models.FloatField(null=False)
     # nouvelle table ad hoc
+
     # foreign key ligne de commandes
     ligneCommande = models.ForeignKey(LigneCommande, related_name='commande', on_delete=models.DO_NOTHING)
     client = models.ForeignKey(Client, related_name='commande', on_delete=models.DO_NOTHING)
